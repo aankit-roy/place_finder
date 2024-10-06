@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
             ChangeNotifierProvider(create: (_) => LocationProvider()),
           ],
           child: MaterialApp(
+            debugShowCheckedModeBanner: false,
             title: 'Place Finder',
             theme: ThemeData(
               colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),

@@ -9,12 +9,14 @@ A Flutter application that allows users to find and display locations on a map u
 - Fetch and display the user's current location on the map.
 - Change map types (Normal, Satellite, Terrain, Hybrid).
 - Use of provider for state management.
-- flush Snackbar for error message.
+- flushbar for error message.
 
 ## Screenshots
 
-![Home Screen](assets/screenshots/home_screen.png)
-![Map Screen](assets/screenshots/map_screen.png)
+![Home Screen](assets/images/home.jpg)
+![Map Screen](assets/images/map1.jpg)
+![Map Screen](assets/images/map2.jpg)
+
 
 ## Technologies Used
 
@@ -23,7 +25,10 @@ A Flutter application that allows users to find and display locations on a map u
 - Geocoding Package
 - Geolocator Package
 - Provider Package
-- Awesome Snackbar Content Package
+- flushbar Content Package
+-  permission_handler package
+- page_transition package
+- flutter_screenutil package
 
 ## Installation
 

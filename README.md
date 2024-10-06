@@ -1,16 +1,33 @@
-# place_finder
+ # Place Finder
 
-basic app related to map
+A Flutter application that allows users to find and display locations on a map using Google Maps. The app supports user input for locations and can also fetch the user's current location.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Search for locations using an input field.
+- Display the selected location on a Google Map.
+- Fetch and display the user's current location on the map.
+- Change map types (Normal, Satellite, Terrain, Hybrid).
+- Use of provider for state management.
+- flush Snackbar for error message.
 
-A few resources to get you started if this is your first Flutter project:
+## Screenshots
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![Home Screen](assets/screenshots/home_screen.png)
+![Map Screen](assets/screenshots/map_screen.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Technologies Used
+
+- Flutter
+- Google Maps Flutter Package
+- Geocoding Package
+- Geolocator Package
+- Provider Package
+- Awesome Snackbar Content Package
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your_username/place_finder.git
+   cd place_finder

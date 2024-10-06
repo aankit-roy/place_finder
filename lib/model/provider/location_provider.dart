@@ -1,7 +1,10 @@
+import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+import '../../ui/constants/app_colors.dart';
 
 // class LocationProvider with ChangeNotifier {
 //   String? _location;
@@ -32,15 +35,26 @@ class LocationProvider with ChangeNotifier {
   String? _location;
   LatLng? _coordinates;
   String? _errorMessage;
+  MapType _mapType = MapType.normal; // Default map type
 
+  // Getters
   String? get location => _location;
   LatLng? get coordinates => _coordinates;
   String? get errorMessage => _errorMessage;
+  MapType get mapType => _mapType; // Getter for map type
 
+  // Setter for location
   set location(String? loc) {
     _location = loc;
     notifyListeners(); // Notify listeners whenever location changes
   }
+
+  // Setter for MapType
+  void setMapType(MapType mapType) {
+    _mapType = mapType;
+    notifyListeners(); // Notify listeners whenever the map type changes
+  }
+
 
   // Future<bool> checkPermission() async {
   //   LocationPermission permission = await Geolocator.checkPermission();
@@ -92,13 +106,14 @@ class LocationProvider with ChangeNotifier {
       notifyListeners(); // Notify listeners to update UI
 
       // Show SnackBar for 3 seconds
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(_errorMessage!),
-          duration: Duration(seconds: 3),
-          backgroundColor: Colors.red, // Optional: red background for emphasis
-        ),
-      );
+      Flushbar(
+            title: "Permission Denied",
+            message: "Please go to the setting and enable Location permission",
+            duration: const Duration(seconds: 3),
+            flushbarPosition: FlushbarPosition.TOP,
+            flushbarStyle: FlushbarStyle.GROUNDED,
+            backgroundColor: AppColors.accentColor);
+
     }
   }
 

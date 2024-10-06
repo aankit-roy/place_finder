@@ -36,3 +36,33 @@ A Flutter application that allows users to find and display locations on a map u
    ```bash
    git clone https://github.com/your_username/place_finder.git
    cd place_finder
+2. Install dependencies:
+   ```bash
+   flutter pub get
+
+## Get a Google Maps API key:
+- Visit the Google Cloud Console.
+- Create a new project.
+- Enable the Maps SDK for Android and iOS.
+- Create credentials (API key).
+
+3. Run the app:
+   ```bash
+   flutter run
+
+##  Usage
+- Launch the app.
+- Enter a location in the input field and press "Show Me" to display the location on the map.
+- Enable the Maps SDK for Android and iOS.
+- Create credentials (API key). 
+
+##  Acknowledgments
+- Flutter
+- Google Maps Platform
+- Geolocator
+- Geocoding
+- Provider
+
+    
+
+

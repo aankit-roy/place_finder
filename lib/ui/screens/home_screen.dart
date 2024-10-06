@@ -42,33 +42,30 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: mainText(context, provider),
+              children: [
+                userInputText(context),
+                SizedBox(height: 30.sp),
+                showMeButton(provider, context),
+                SizedBox(
+                  height: 50.sp,
+                ),
+                Text(
+                  "Discover a Better Place to Ride",
+                  style: TextStyle(
+                      fontSize: 50.sp,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.whiteColor),
+                ),
+                SizedBox(
+                  height: 60.sp,
+                ),
+
+              ],
             ),
           ),
         ),
       ),
     );
-  }
-
-  List<Widget> mainText(BuildContext context, LocationProvider provider) {
-    return [
-      userInputText(context),
-      SizedBox(height: 30.sp),
-      showMeButton(provider, context),
-      SizedBox(
-        height: 50.sp,
-      ),
-      Text(
-        "Discover a Better Place to Ride",
-        style: TextStyle(
-            fontSize: 50.sp,
-            fontWeight: FontWeight.bold,
-            color: AppColors.whiteColor),
-      ),
-      SizedBox(
-        height: 60.sp,
-      ),
-    ];
   }
 
   Container showMeButton(LocationProvider provider, BuildContext context) {

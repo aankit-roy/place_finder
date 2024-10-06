@@ -62,16 +62,6 @@ class LocationProvider with ChangeNotifier {
     notifyListeners(); // Notify listeners to update UI
   }
 
-
-  // Future<bool> checkPermission() async {
-  //   LocationPermission permission = await Geolocator.checkPermission();
-  //   if (permission == LocationPermission.denied) {
-  //     permission = await Geolocator.requestPermission();
-  //     return permission == LocationPermission.whileInUse || permission == LocationPermission.always;
-  //   }
-  //   return true;
-  // }
-
   Future<void> getCoordinatesFromAddress(BuildContext context) async {
     if (_location != null) {
       try {
@@ -140,16 +130,5 @@ class LocationProvider with ChangeNotifier {
     return true;
   }
 
-  // Future<void> findCurrentLocation(BuildContext context) async {
-  //   if (await checkPermission()) {
-  //     Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
-  //     _coordinates = LatLng(position.latitude, position.longitude);
-  //     _errorMessage = null; // Reset error message
-  //     print('Current Location: Latitude = ${position.latitude}, Longitude = ${position.longitude}');
-  //     notifyListeners(); // Notify listeners to update UI
-  //   } else {
-  //     _errorMessage = 'Location permission denied. Please enable it in settings.';
-  //     notifyListeners(); // Notify listeners to update UI
-  //   }
-  // }
+
 }

@@ -9,7 +9,6 @@ class AppColors {
 
   // Background Colors
   static const Color backgroundColor = Color(0xFFF5F5F5); // Light Gray
-  static const Color cardColor = Color(0xFFFFFFFF); // White for cards or containers
   static const Color whiteColor = Color(0xFFFFFFFF);
 
   // Text Colors

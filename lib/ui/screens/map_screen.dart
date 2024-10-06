@@ -18,9 +18,8 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
-  LatLng? _coordinates;
-  String? _errorMessage;
-  GoogleMapController? _controller; // Add this line
+
+
   @override
   void initState() {
     super.initState();

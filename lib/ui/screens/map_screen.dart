@@ -18,7 +18,9 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
-  BitmapDescriptor? customIcon;
+  LatLng? _coordinates;
+  String? _errorMessage;
+  GoogleMapController? _controller; // Add this line
   @override
   void initState() {
     super.initState();
@@ -75,8 +77,14 @@ class _MapScreenState extends State<MapScreen> {
                   child: FloatingActionButton.extended(
                     onPressed: () => provider
                         .findCurrentLocation(context), // Call provider method
-                    label: const Text("Current Location",style: TextStyle(color: AppColors.whiteColor),),
-                    icon: const Icon(Icons.my_location,color: AppColors.whiteColor,),
+                    label: const Text(
+                      "Current Location",
+                      style: TextStyle(color: AppColors.whiteColor),
+                    ),
+                    icon: const Icon(
+                      Icons.my_location,
+                      color: AppColors.whiteColor,
+                    ),
                     backgroundColor: AppColors.buttonColor,
                   ),
                 ),
@@ -88,11 +96,6 @@ class _MapScreenState extends State<MapScreen> {
   void _getCoordinates() {
     final provider = Provider.of<LocationProvider>(context, listen: false);
     provider.getCoordinatesFromAddress(context);
-  }
-
-  void _findCurrentLocation() {
-    final provider = Provider.of<LocationProvider>(context, listen: false);
-    provider.findCurrentLocation(context);
   }
 
   Flushbar<dynamic> NotificationFlushbar() {

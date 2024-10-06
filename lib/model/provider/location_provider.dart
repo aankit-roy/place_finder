@@ -55,6 +55,13 @@ class LocationProvider with ChangeNotifier {
     notifyListeners(); // Notify listeners whenever the map type changes
   }
 
+  void resetLocation() {
+    _location = null;
+    _coordinates = null;
+    _errorMessage = null;
+    notifyListeners(); // Notify listeners to update UI
+  }
+
 
   // Future<bool> checkPermission() async {
   //   LocationPermission permission = await Geolocator.checkPermission();

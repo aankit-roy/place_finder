@@ -95,8 +95,9 @@ class _HomeScreenState extends State<HomeScreen> {
             setState(() {
               _errorMessage = null;
             });
-            // Save location and navigate to next screen
+
             // Set the location in the provider
+            provider.resetLocation();
             provider.location = _locationController.text;
 
             _navigateToNextScreen(context);
